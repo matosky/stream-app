@@ -3,7 +3,8 @@
  * @description Module for connecting to MongoDB Atlas using Mongoose.
  */
 
-import mongoose from 'mongoose';
+const mongoose = require("mongoose")
+
 
 /**
  * Connect to MongoDB Atlas using the provided connection string.
@@ -20,4 +21,5 @@ async function configDb(connectionString) {
   }
 }
 
-export default configDb;
+
+module.exports = configDb;

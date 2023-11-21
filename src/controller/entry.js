@@ -1,8 +1,8 @@
 
-import { pipeline, Transform } from 'stream';
-import csvParser from 'csv-parser';
-import MSISDNTransform from '../utils/MSISDNTransform.js';
-import Entry from '../models/entry.js';
+const { pipeline, Transform } = require('stream');
+const csvParser = require('csv-parser');
+const MSISDNTransform = require('../utils/MSISDNTransform.js');
+const Entry = require("../model/entry.js");
 
 
 
@@ -28,7 +28,7 @@ function dbStream() {
 }
 
 
-export const handleFileUpload = async (req, res)=> {
+ const handleFileUpload = async (req, res)=> {
     const { file } = req;
     // Use pipeline to handle streaming from request to database
     pipeline(
@@ -46,3 +46,5 @@ export const handleFileUpload = async (req, res)=> {
       }
     );
   }
+
+  module.exports = handleFileUpload

@@ -1,11 +1,9 @@
-import { Transform } from 'stream';
-
+const Transform = require("stream")
 // Normalize MSISDN to international format
 function normalizeMSISDN(msisdn) {
   return msisdn;
 }
-
-export const MSISDNTransform = new Transform({
+ const MSISDNTransform = new Transform({
   objectMode: true,
   transform(chunk, encoding, callback) {
     const normalizedMSISDN = normalizeMSISDN(chunk.MSISDN);
@@ -15,4 +13,4 @@ export const MSISDNTransform = new Transform({
   }
 });
 
-export default msdin;
+module.exports = MSISDNTransform;

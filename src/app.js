@@ -1,8 +1,15 @@
-import express from "express";
-import multer from "multer";
-// import { handleFileUpload } from "./controllers/upload";
-import mongoose from "mongoose";
+const  express  = require("express");
+const multer = require("multer")
+const mongoose = require("mongoose")
+const cors = require("cors")
+const handleFileUpload = require("./controller/entry")
+
+
 const app = express()
+app.use(cors)
+app.use(express.json())
+
+
 const PORT = process.env.PORT || 3000;
 const connectionString = "mongodb+srv://akari:akari@cluster0.xrdal5y.mongodb.net/?retryWrites=true&w=majority"
 
