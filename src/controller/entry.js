@@ -28,7 +28,7 @@ function dbStream() {
 }
 
 
- const handleFileUpload = async (req, res)=> {
+ const handleFileUpload = async (req,res)=> {
     const { file } = req;
     // Use pipeline to handle streaming from request to database
     pipeline(

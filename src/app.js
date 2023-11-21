@@ -1,10 +1,11 @@
 const  express  = require("express");
 const multer = require("multer")
+const dotenv = require("dotenv")
 const mongoose = require("mongoose")
 const cors = require("cors")
 const handleFileUpload = require("./controller/entry")
 
-
+dotenv.config()
 const app = express()
 app.use(cors)
 app.use(express.json())
@@ -17,6 +18,7 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 app.post('/upload', upload.single('csvFile'), handleFileUpload);
+
 async function configDb(connectionString) {
   try {
     await mongoose.connect(connectionString);
