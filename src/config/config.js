@@ -3,8 +3,7 @@
  * @description Module for connecting to MongoDB Atlas using Mongoose.
  */
 
-const mongoose = require("mongoose")
-
+const mongoose = require("mongoose");
 
 /**
  * Connect to MongoDB Atlas using the provided connection string.
@@ -14,12 +13,11 @@ const mongoose = require("mongoose")
 async function configDb(connectionString) {
   try {
     await mongoose.connect(connectionString);
-    console.log('Connected to MongoDB Atlas!');
+    console.log("Connected to MongoDB Atlas!");
   } catch (error) {
-    console.error('MongoDB connection error:', error);
+    console.error("MongoDB connection error:", error);
     throw error; // Re-throw the error for handling in the calling code if needed
   }
 }
-
 
 module.exports = configDb;

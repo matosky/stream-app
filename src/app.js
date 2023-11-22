@@ -19,7 +19,6 @@ const upload = multer({ storage: storage });
 
 app.post('/upload', upload.single('csvFile'), handleFileUpload);
 
-
 configDb(connectionString)
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
